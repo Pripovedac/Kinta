@@ -1,17 +1,19 @@
 <template>
     <div>
         <Paper>
+            <!--<form @submit="logUser">-->
             <h3 id="kinta">kinta</h3>
             <h4 class="Welcome-back">Welcome back</h4>
             <p id="funnyQuestion">Did you lose some weight?</p>
-            <Input :placeholder="Email"/>
-            <Input :placeholder="Password"/>
+            <Input @txtValue="addEmail($event)" :placeholder="Email"/>
+            <Input @txtValue="addPassword($event)" :placeholder="Password"/>
             <div id="inlineHolder">
                 <label> <input type="checkbox" checked class="chkBox"/> Keep me logged in</label>
                 <p class="link"> Forgot Password? </p>
             </div>
             <PrimaryButton> LOG IN</PrimaryButton>
             <p>Don't have an account? <span class="link">Sign up</span></p>
+            <!--</form>-->
         </Paper>
         <p class="SecurityRealibility">Security and Reliability</p>
     </div>
@@ -23,23 +25,40 @@
     import Paper from '../ui/Paper.vue'
 
     export default {
-        data() {
-            return {
-                Email: "Email", // user@example.com
-                Password: "Password" // Must containt at least 6 characters
-            }
-        },
         components: {
             Input,
             PrimaryButton,
             Paper
+        },
+        data() {
+            return {
+                Email: "Email", // user@example.com
+                Password: "Password", // Must containt at least 6 characters,
+                userData: {
+                    email: "",
+                    password: ""
+                },
+                emailValue: "",
+                passValue: "",
+            }
+        },
+        methods: {
+            addEmail(email) {
+                this.userData.email = email
+            },
+            addPassword(password) {
+                this.userData.password = password
+                console.log("UserData.email: ", this.userData.email)
+                console.log("UserData.password: ", this.userData.password)
+            },
         }
+
     }
 </script>
 
 <style scoped>
     #kinta {
-        color:transparent;
+        color: transparent;
         -webkit-background-clip: text;
         font-size: 2.2em;
         width: 110.3px;
@@ -49,6 +68,7 @@
         padding-top: 25%;
         padding-bottom: 10%;
     }
+
     .Welcome-back {
         width: 163px;
         height: 29px;
@@ -63,6 +83,7 @@
         color: #345678;
         margin: 0 auto;
     }
+
     #funnyQuestion {
         /*color: gray;*/
         width: 198px;
@@ -92,11 +113,11 @@
     }
 
     /*.chkBox{*/
-        /*width: 8px;*/
-        /*height: 9.5px;*/
-        /*background-color: #12a26f;*/
+    /*width: 8px;*/
+    /*height: 9.5px;*/
+    /*background-color: #12a26f;*/
     /*}*/
-    .link{
+    .link {
         color: green;
         text-decoration: underline;
         width: 135px;
@@ -111,6 +132,7 @@
         text-align: right;
         color: #26bead;
     }
+
     .SecurityRealibility {
         width: 127px;
         height: 14px;

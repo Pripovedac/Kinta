@@ -1,13 +1,28 @@
 <template>
-  <div>
-      <label><input class="inputField" type="text" :placeholder="placeholder"/></label>
-  </div>
+    <div>
+        <label><input class="inputField"
+                      type="text"
+                      v-model="txtValue"
+                      :placeholder="placeholder"
+                      @change="importValue"/></label>
+    </div>
 </template>
 
 <script>
-export default {
-    props: ['placeholder']
-}
+    export default {
+        props: ['placeholder'],
+        data() {
+            return {
+                txtValue: ""
+            }
+        },
+        methods: {
+            importValue(event) {
+                console.log('txtValue', this.txtValue)
+                this.$emit('txtValue', this.txtValue)
+            }
+        }
+    }
 </script>
 
 <style scoped>
@@ -26,7 +41,7 @@ export default {
     }
 
     /* Not working, yet to see. */
-    .inputField:hover{
+    .inputField:hover {
         /*border: solid 1px #26bead;*/
         curosor: pointer;
     }
