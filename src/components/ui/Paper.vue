@@ -15,5 +15,7 @@ export default {
         background-color: whitesmoke;
         border: 1px solid black;
         box-shadow: 2px 2px 0 0 black;
+        width: 30%;
+        margin: 0 auto;
     }
 </style>
