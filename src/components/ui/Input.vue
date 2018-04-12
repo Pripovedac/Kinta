@@ -1,6 +1,6 @@
 <template>
   <div>
-      <label><input type="text" :placeholder="placeholder"/></label>
+      <label><input class="inputField" type="text" :placeholder="placeholder"/></label>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style scoped>
-    input {
+    .inputField {
         /*width: 80%;*/
         padding-left: 2%;
         margin-top: 2%;
@@ -25,12 +25,9 @@ export default {
         border: solid 1px #26bead;
     }
 
-    input:hover{
-        width: 368px;
-        height: 48px;
-        border-radius: 2px;
-        background-color: #ffffff;
-        border: solid 1px #26bead;
+    /* Not working, yet to see. */
+    .inputField:hover{
+        /*border: solid 1px #26bead;*/
         curosor: pointer;
     }
 
