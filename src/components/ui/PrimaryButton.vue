@@ -12,6 +12,6 @@ export default {
 
 <style scoped>
     .primary-button {
-        background-color: hotpink;
+        background-color: #eee;
     }
 </style>

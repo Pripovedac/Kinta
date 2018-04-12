@@ -1,12 +1,12 @@
 <template>
   <div>
-      ovo je input
+      <label><input type="text" :placeholder="placeholder"/></label>
   </div>
 </template>
 
 <script>
 export default {
-  
+    props: ['placeholder']
 }
 </script>
 

@@ -2,8 +2,8 @@
   <div>
       <span> login </span>
       <Paper>
-        <Input />
-        <Input />
+        <Input :placeholder="Email"/>
+        <Input :placeholder="Password"/>
         <PrimaryButton> Login </PrimaryButton>
       </Paper>
   </div>
@@ -15,6 +15,12 @@ import PrimaryButton from '../ui/PrimaryButton.vue'
 import Paper from '../ui/Paper.vue'
 
 export default {
+    data(){
+        return {
+            Email: "Email", // user@example.com
+            Password: "Password" // Must containt at least 6 characters
+        }
+    },
   components: {
     Input,
     PrimaryButton,
