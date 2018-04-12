@@ -1,9 +1,9 @@
 <template>
     <div>
         <Paper>
-            <h3>kinta</h3>
+            <h3 id="kinta">kinta</h3>
             <h4>Welcome back</h4>
-            <p>Did you lose some weight?</p>
+            <p id="funnyQuestion">Did you lose some weight?</p>
             <Input :placeholder="Email"/>
             <Input :placeholder="Password"/>
             <div id="inlineHolder">
@@ -36,6 +36,25 @@
 </script>
 
 <style scoped>
+    #kinta {
+        background: linear-gradient(to left bottom, rgb(86, 245, 94), rgb(36, 178, 97));
+        color:transparent;
+        -webkit-background-clip: text;
+        font-size: 2em;
+    }
 
+    #funnyQuestion {
+        color: gray;
+    }
+
+    #inlineHolder {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 4%;
+    }
 </style>
 
