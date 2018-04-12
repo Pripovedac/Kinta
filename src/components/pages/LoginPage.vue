@@ -8,9 +8,10 @@
             <Input :placeholder="Password"/>
             <div id="inlineHolder">
                 <label> <input type="checkbox" checked/> Keep me logged in</label>
-                <p> Forgot password? </p>
+                <p class="link"> Forgot Password? </p>
             </div>
             <PrimaryButton> LOG IN</PrimaryButton>
+            <p>Don't have an account? <span class="link">Sign up</span></p>
         </Paper>
     </div>
 </template>
@@ -40,7 +41,7 @@
         background: linear-gradient(to left bottom, rgb(86, 245, 94), rgb(36, 178, 97));
         color:transparent;
         -webkit-background-clip: text;
-        font-size: 2em;
+        font-size: 2.2em;
     }
 
     #funnyQuestion {
@@ -55,6 +56,11 @@
         width: 80%;
         margin: 0 auto;
         padding-bottom: 4%;
+    }
+
+    .link{
+        color: green;
+        text-decoration: underline;
     }
 </style>
 
